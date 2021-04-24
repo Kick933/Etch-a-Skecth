@@ -1,0 +1,21 @@
+body{
+    text-align: center;
+}
+.sketch :hover{
+    background-color: blue;
+}
+.sketch{
+    background-color: white;
+    border-style:solid;
+}
+#container{
+    display: flexbox;
+    flex-direction: column;
+    width: 70vw;
+    height: 70vw;
+    margin: 15vw;
+
+}
+.hidden{
+    display: none;
+}
