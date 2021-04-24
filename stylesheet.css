@@ -1,21 +1,38 @@
 body{
     text-align: center;
 }
-.sketch :hover{
-    background-color: blue;
-}
 .sketch{
     background-color: white;
+    outline:1px solid black;
 }
 #container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 70vw;
-    height: 70vw;
-    margin: 15vw;
-
+    width: 80vmin;
+    height: 80vmin;
+    margin: auto;
 }
 .hidden{
     display: none;
+}
+#show{
+    width: 10%;
+    height: 10%;
+    margin: 2%;
+    font-size: 150%;
+}
+#pad-size{
+    width: 10%;
+    height: 10%;
+    margin: 2%;
+    font-size: 150%;
+}
+#change-size{
+    border-color:blanchedalmond;
+    width: 10%;
+    height: 10%;
+    margin: 2%;
+    font-size: 150%;
+    border-radius: 8%;
 }
