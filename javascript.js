@@ -1,10 +1,13 @@
 const pad = document.querySelector('#container'); 
 let size = 16;
+let width_value = 0;
 
 for(let i = 0; i < size*size ; i++){
   const temp = document.createElement('div');
   temp.classList.add("sketch");
-  temp.style.cssText =`width : (100/${size})%; height:(100/${size})%`;
+  let width_value = 100/size;
+  temp.style.width =`${width_value}%`;
+  temp.style.height = `${width_value}%`;
   pad.appendChild(temp);
 }
 
@@ -30,7 +33,9 @@ function resize(){
   for(let i = 1; i <= size*size ; i++){
     const temp = document.createElement('div');
     temp.classList.add("sketch");
-    temp.style.cssText =`width : (100 / ${size})%; height : (100 / ${size})%`;
+    let width_value = 100/size;
+    temp.style.width =`${width_value}%`;
+    temp.style.height = `${width_value}%`;
     pad.appendChild(temp);
   }
 }

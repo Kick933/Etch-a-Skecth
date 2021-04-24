@@ -6,11 +6,11 @@ body{
 }
 .sketch{
     background-color: white;
-    border-style:solid;
 }
 #container{
-    display: flexbox;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 70vw;
     height: 70vw;
     margin: 15vw;
