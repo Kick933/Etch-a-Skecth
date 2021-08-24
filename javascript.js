@@ -2,42 +2,42 @@ const pad = document.querySelector('#container');
 let size = 16;
 let width_value = 0;
 
-for(let i = 0; i < size*size ; i++){
-  const temp = document.createElement('div');
-  temp.classList.add("sketch");
-  let width_value = 100/size;
-  temp.style.width =`${width_value}%`;
-  temp.style.height = `${width_value}%`;
-  temp.addEventListener('mouseenter', ()=> temp.style.backgroundColor="red");
-  pad.appendChild(temp);
-}
 
-const btn = document.querySelector("#show")
-btn.addEventListener('click', show)
+const btn = document.querySelector("#showForm")
+btn.addEventListener('click', () =>{
+  btn.classList.toggle("hidden");
+  theForm.classList.toggle("hidden")
+})
 
-function show(){
-  input.classList.toggle("hidden");
-  changeBtn.classList.toggle("hidden");
-  btn.classList.add("hidden");
+
+const theInput = document.querySelector("#pad-size");
+const theForm = document.querySelector("#sizeChange");
+theForm.addEventListener('submit',(e) =>{
+e.preventDefault();
+resize();
+});
+
+function renderGrid(x){
+  for(let i = 1; i <= x*x ; i++){
+    const temp = document.createElement('div');
+    temp.classList.add("sketch");
+    let width_value = 100/x;
+    temp.style.width =`${width_value}%`;
+    temp.style.height = `${width_value}%`;
+    temp.addEventListener('mouseover', ()=> temp.style.backgroundColor = "red");
+    pad.appendChild(temp);
+  }
 }
-  
-const input = document.querySelector("#pad-size");
-const changeBtn = document.querySelector("#change-size");
-changeBtn.addEventListener( 'click' , resize);
+renderGrid(size)
+
 
 function resize(){
   for(let i = 0; i < size*size ; i++){
     const temp = document.querySelector('.sketch');
     pad.removeChild(temp);
   }
-  size = input.value;
-  for(let i = 1; i <= size*size ; i++){
-    const temp = document.createElement('div');
-    temp.classList.add("sketch");
-    let width_value = 100/size;
-    temp.style.width =`${width_value}%`;
-    temp.style.height = `${width_value}%`;
-    temp.addEventListener('mouseover', ()=> temp.style.backgroundColor = "red");
-    pad.appendChild(temp);
-  }
+  console.log("Removed")
+  size = theInput.value;
+  console.log(size)
+  renderGrid(size)
 }

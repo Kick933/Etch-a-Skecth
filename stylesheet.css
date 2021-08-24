@@ -16,7 +16,13 @@ body{
 .hidden{
     display: none;
 }
-#show{
+button{
+    width: 10%;
+    height: 10%;
+    margin: 2%;
+    font-size: 150%;
+}
+input[type='submit']{
     width: 10%;
     height: 10%;
     margin: 2%;
